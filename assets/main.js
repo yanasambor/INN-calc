@@ -5,10 +5,6 @@ function calc(){
     let coefficients = [-1, 5, 7, 9, 4, 6, 10, 5, 7];
     
     let num = inn.slice(0,9);
-  
-    let control=inn.slice(-1);
-    
-    let genderNumber = inn.slice(8,9);
 
     let summ = num.reduce(function(r,a,i){return r+a*coefficients[i]},0);
     
@@ -22,13 +18,13 @@ function calc(){
             controlNumber=(summ % 11) % 10;
         }
 
-        if (genderNumber % 2 == 0) {
+        if (inn[8] % 2 == 0) {
             genderResult=("Обладатель данного ИИН - женщина");
         } else {
             genderResult=("Обладатель данного ИИН - мужчина");
         }
             
-        if(controlNumber == control){
+        if(controlNumber == inn[9]){
             checkResult=("Действительный ИНН");
         } 
         else {
